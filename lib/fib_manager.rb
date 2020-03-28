@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'pry'
-
 class FibManager
   def create(num)
     raise ArgumentError, 'input must be a natural number' unless valid_num(num)
