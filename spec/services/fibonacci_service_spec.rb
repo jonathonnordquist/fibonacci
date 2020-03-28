@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require '../lib/fib_manager'
+require 'rails_helper'
 
-RSpec.describe FibManager do
+RSpec.describe FibonacciService do
   describe '#create' do
     it 'returns an empty string for an input of zero' do
       expect(subject.create(0)).to eq ''

@@ -1,7 +1,5 @@
-class FibonacciController < ApplicationController
-  def index
-  end
+# frozen_string_literal: true
 
-  def create
-  end
+class FibonacciController < ApplicationController
+  def index; end
 end
