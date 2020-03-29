@@ -5,9 +5,10 @@ class FibonacciService
     def create(num)
       raise ArgumentError, 'input must be a natural number' unless valid_num(num)
 
-      arr = Array.new(num.to_i)
-
-      map_nums_into_arr(arr).join(' ')
+      Rails.cache.fetch(num, expires_in: 2.minutes) do
+        arr = Array.new(num.to_i)
+        map_nums_into_arr(arr).join(' ')
+      end
     end
 
     private
