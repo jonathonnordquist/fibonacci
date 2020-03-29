@@ -7,9 +7,6 @@ $(document).ready(() => {
       dataType: 'json'
     })
     .done(data => $('.display-area').html(data.sequence))
-    .fail(() => console.log('error'));
-  })
+    .fail((data) => $('.display-area').html(data.responseJSON.error));
+  });
 });
-
-
-// ;

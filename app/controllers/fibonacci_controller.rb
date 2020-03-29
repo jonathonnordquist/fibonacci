@@ -5,14 +5,15 @@ class FibonacciController < ApplicationController
     respond_to do |format|
       format.html
       format.json do
-        render json: { sequence: FibonacciService.new.create(fib_params[:target]) }, status: :ok
+        render json: { sequence: FibonacciService.create(fib_params[:target]) }
+      rescue ArgumentError => e
+        render json: { error: e.message }, status: :bad_request
       end
     end
   end
 
   private
-
-  def fib_params
-    params.permit(:target)
-  end
+    def fib_params
+      params.permit(:target)
+    end
 end
