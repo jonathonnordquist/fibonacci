@@ -1,2 +1,12 @@
-<h1>Fibonacci#index</h1>
-<p>Find me in app/views/fibonacci/index.html.erb</p>
+<h1>Fibonacci Generator</h1>
+<%= form_with do %>
+  <%= label_tag :q, 'Enter number' %>
+  <%= text_field_tag :q, '', class: 'target_number'  %>
+  <%= submit_tag 'Submit', class: 'form_submit' %>
+<% end %>
+
+<div class='display-area'>
+
+</div>
+
+<%= javascript_pack_tag 'fibonacci' %>
